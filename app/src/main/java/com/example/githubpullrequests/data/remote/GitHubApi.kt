@@ -11,7 +11,7 @@ interface GitHubApi {
         const val BASE_URL = "https://api.github.com/repos/"
         // Created from github:
         // Settings -> Developer Settings -> Personal access tokens
-        const val AUTH_TOKEN = "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"
+        const val AUTH_TOKEN = "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"
     }
 
     @Headers(
