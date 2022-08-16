@@ -32,7 +32,7 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             getClosedPullRequestsUseCase(
                 "Saurabhy177",
-                "GitHubPullRequests\n"
+                "GitHubPullRequests"
             ).onEach { result ->
 
                 when (result) {
