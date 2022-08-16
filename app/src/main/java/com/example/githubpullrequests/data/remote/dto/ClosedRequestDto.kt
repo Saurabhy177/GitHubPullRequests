@@ -3,6 +3,7 @@ package com.example.githubpullrequests.data.remote.dto
 
 import com.google.gson.annotations.SerializedName
 import androidx.annotation.Keep
+import com.example.githubpullrequests.domain.model.ClosedRequestModel
 
 @Keep
 data class ClosedRequestDto(
@@ -60,4 +61,15 @@ data class ClosedRequestDto(
     val url: String?,
     @SerializedName("user")
     val user: UserXX?
-)
+) {
+
+    fun toClosedRequestModel(): ClosedRequestModel {
+        return ClosedRequestModel(
+            username = user?.login ?: "",
+            userImage = user?.avatarUrl ?: "",
+            title = title ?: "",
+            createdDate = createdAt ?: "",
+            closedDate = closedAt ?: ""
+        )
+    }
+}

@@ -6,5 +6,8 @@ import kotlinx.coroutines.flow.Flow
 
 interface GitHubRepo {
 
-    fun getClosedPullRequests(): Flow<Resource<List<ClosedRequestModel>>>
+    fun getClosedPullRequests(
+        owner: String,
+        repoName: String
+    ): Flow<Resource<List<ClosedRequestModel>>>
 }
