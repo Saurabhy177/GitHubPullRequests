@@ -17,8 +17,6 @@ class GitHubRepoImpl(
         owner: String,
         repoName: String
     ): Flow<Resource<List<ClosedRequestModel>>> = flow {
-        emit(Resource.Loading())
-
         try {
             val closedPullRequests = api.getClosedPullRequests(owner, repoName)
             emit(Resource.Success(

@@ -11,9 +11,10 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel(
+class MainViewModel @Inject constructor(
     private val getClosedPullRequestsUseCase: GetClosedPullRequestsUseCase
 ): ViewModel() {
 
@@ -30,8 +31,8 @@ class MainViewModel(
     fun fetchClosedPullRequests() {
         viewModelScope.launch {
             getClosedPullRequestsUseCase(
-                "",
-                ""
+                "Saurabhy177",
+                "GitHubPullRequests\n"
             ).onEach { result ->
 
                 when (result) {

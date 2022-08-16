@@ -10,6 +10,6 @@ class GetClosedPullRequestsUseCase(
 ) {
 
     operator fun invoke(owner: String, repoName: String): Flow<Resource<List<ClosedRequestModel>>> {
-        return repo.getClosedPullRequests()
+        return repo.getClosedPullRequests(owner, repoName)
     }
 }
