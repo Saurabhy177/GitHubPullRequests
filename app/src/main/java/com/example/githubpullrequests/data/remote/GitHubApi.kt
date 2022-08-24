@@ -19,7 +19,7 @@ interface GitHubApi {
         "Authorization: token $AUTH_TOKEN"
     )
     //@GET("{owner}/{repo}/pulls?state=closed")
-    @GET("{owner}/{repo}/pulls")
+    @GET("{owner}/{repo}/pulls?state=all")
     suspend fun getClosedPullRequests(
         @Path("owner") owner: String,
         @Path("repo") repo: String
